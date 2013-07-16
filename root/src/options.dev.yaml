@@ -15,3 +15,15 @@ extensions:
   status     : true
   navigation : true
   scale      : true
+
+
+
+
+slides:
+  -
+    html: <h1>Slide</h1>
+  -
+    h1: Content
+  -
+    html: <h1>Here</h1>
+

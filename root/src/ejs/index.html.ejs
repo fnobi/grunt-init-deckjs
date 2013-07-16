@@ -30,19 +30,10 @@
 <body class="deck-container">
 
 <!-- Begin slides. Just make elements with a class of slide. -->
-
-<section class="slide">
-<h1>Slide</h1>
-</section>
-
-<section class="slide">
-<h1>Content</h1>
-</section>
-
-<section class="slide">
-<h1>Here</h1>
-</section>
-
+<% slides.forEach(function (slide) { %>
+<section class="slide"><% if (slide.html) { %>
+<%- slide.html %><% } else { %><% if (slide.h1) { %>
+<h1><%= slide.h1 %></h1><% } %><% } %></section><% }); %>
 <!-- End slides. -->
 
 
