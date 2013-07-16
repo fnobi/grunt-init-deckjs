@@ -1,5 +1,6 @@
-# slide title (and html title).
+# slide title & description
 title: {%= name %}
+description: {%= description %}
 
 # neon, swiss or web-2.0 (default)
 style_theme: swiss
