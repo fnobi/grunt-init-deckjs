@@ -1,0 +1,17 @@
+# slide title (and html title).
+title: {%= name %}
+
+# neon, swiss or web-2.0 (default)
+style_theme: swiss
+
+# fade, horizontal-slide or vertical-slide (default)
+transition_theme: horizontal-slide
+
+# extensions flag
+extensions:
+  hash       : true
+  menu       : true
+  goto       : true
+  status     : true
+  navigation : true
+  scale      : true
