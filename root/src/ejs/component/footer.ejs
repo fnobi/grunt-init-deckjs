@@ -1,0 +1,48 @@
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<% if (extensions.navigation) { %>
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a><% } %>
+
+<% if (extensions.menu) { %>
+<!-- deck.status snippet -->
+<p class="deck-status">
+<span class="deck-status-current"></span>
+/
+<span class="deck-status-total"></span>
+</p><% } %>
+
+<% if (extensions.goto) { %>
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+<label for="goto-slide">Go to slide:</label>
+<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+<datalist id="goto-datalist"></datalist>
+<input type="submit" value="Go">
+</form><% } %>
+
+<% if (extensions.menu) { %>
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a><% } %>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="core/deck.core.js"></script><% if (extensions.hash) { %>
+<script src="extensions/hash/deck.hash.js"></script><% } %><% if (extensions.menu) { %>
+<script src="extensions/menu/deck.menu.js"></script><% } %><% if (extensions.goto) { %>
+<script src="extensions/goto/deck.goto.js"></script><% } %><% if (extensions.status) { %>
+<script src="extensions/status/deck.status.js"></script><% } %><% if (extensions.navigation) { %>
+<script src="extensions/navigation/deck.navigation.js"></script><% } %><% if (extensions.scale) { %>
+<script src="extensions/scale/deck.scale.js"></script><% } %>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>$(function() { $.deck('.slide'); });</script>
+</body>
+</html>

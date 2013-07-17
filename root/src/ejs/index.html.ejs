@@ -1,88 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=1024, user-scalable=no">
-
-<title><%= title %></title>
-<meta name="description" content="<%= description %>" />
-
-<!-- Required stylesheet -->
-<link rel="stylesheet" href="core/deck.core.css">
-
-<!-- Extension CSS files go here. Remove or add as needed. --><% if (extensions.goto) { %>
-<link rel="stylesheet" href="extensions/goto/deck.goto.css"><% } %><% if (extensions.menu) { %>
-<link rel="stylesheet" href="extensions/menu/deck.menu.css"><% } %><% if (extensions.navigation) { %>
-<link rel="stylesheet" href="extensions/navigation/deck.navigation.css"><% } %><% if (extensions.status) { %>
-<link rel="stylesheet" href="extensions/status/deck.status.css"><% } %><% if (extensions.hash) { %>
-<link rel="stylesheet" href="extensions/hash/deck.hash.css"><% } %><% if (extensions.scale) { %>
-<link rel="stylesheet" href="extensions/scale/deck.scale.css"><% } %>
-
-<!-- Style theme. More available in /themes/style/ or create your own. -->
-<link rel="stylesheet" href="themes/style/<%= style_theme %>.css">
-
-<!-- Transition theme. More available in /themes/transition/ or create your own. -->
-<link rel="stylesheet" href="themes/transition/<%= transition_theme %>.css">
-
-<!-- Required Modernizr file -->
-<script src="modernizr.custom.js"></script>
-</head>
-<body class="deck-container">
+<% include component/header %>
 
 <!-- Begin slides. Just make elements with a class of slide. -->
-<% slides.forEach(function (slide) { %>
-<section class="slide"><% if (slide.html) { %>
-<%- slide.html %><% } else { %><% if (slide.h1) { %>
-<h1><%= slide.h1 %></h1><% } %><% } %></section><% }); %>
+<section class="slide">
+<h1>Slide</h1>
+</section>
+
+<section class="slide">
+<h1>Content</h1>
+</section>
+
+<section class="slide">
+<h1>Here</h1>
+</section>
 <!-- End slides. -->
 
-
-<!-- Begin extension snippets. Add or remove as needed. -->
-
-<% if (extensions.navigation) { %>
-<!-- deck.navigation snippet -->
-<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-<a href="#" class="deck-next-link" title="Next">&#8594;</a><% } %>
-
-<% if (extensions.menu) { %>
-<!-- deck.status snippet -->
-<p class="deck-status">
-<span class="deck-status-current"></span>
-/
-<span class="deck-status-total"></span>
-</p><% } %>
-
-<% if (extensions.goto) { %>
-<!-- deck.goto snippet -->
-<form action="." method="get" class="goto-form">
-<label for="goto-slide">Go to slide:</label>
-<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-<datalist id="goto-datalist"></datalist>
-<input type="submit" value="Go">
-</form><% } %>
-
-<% if (extensions.menu) { %>
-<!-- deck.hash snippet -->
-<a href="." title="Permalink to this slide" class="deck-permalink">#</a><% } %>
-
-<!-- End extension snippets. -->
-
-
-<!-- Required JS files. -->
-<script src="jquery-1.7.2.min.js"></script>
-<script src="core/deck.core.js"></script>
-
-<!-- Extension JS files. Add or remove as needed. -->
-<script src="core/deck.core.js"></script><% if (extensions.hash) { %>
-<script src="extensions/hash/deck.hash.js"></script><% } %><% if (extensions.menu) { %>
-<script src="extensions/menu/deck.menu.js"></script><% } %><% if (extensions.goto) { %>
-<script src="extensions/goto/deck.goto.js"></script><% } %><% if (extensions.status) { %>
-<script src="extensions/status/deck.status.js"></script><% } %><% if (extensions.navigation) { %>
-<script src="extensions/navigation/deck.navigation.js"></script><% } %><% if (extensions.scale) { %>
-<script src="extensions/scale/deck.scale.js"></script><% } %>
-
-<!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>$(function() { $.deck('.slide'); });</script>
-</body>
-</html>
+<% include component/footer %>
