@@ -29,7 +29,8 @@ exports.template = function (grunt, init, done) {
             devDependencies: {
                 'grunt': '~0.4.0',
                 'grunt-contrib-watch': '~0.1.1',
-                "grunt-simple-ejs": "git://github.com/nobii/grunt-simple-ejs.git"
+                'grunt-contrib-compass': '0.4.0',
+                "grunt-simple-ejs": "0.0.0"
             }
         };
 

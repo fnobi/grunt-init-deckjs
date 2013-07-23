@@ -4,7 +4,27 @@ module.exports = function(grunt) {
         watch: {
             html: {
                 files: ['src/ejs/*.ejs', 'src/ejs/**/*.ejs', 'src/*.yaml'],
-                tasks: ['ejs:dev']
+                tasks: ['ejs']
+            },
+            css: {
+                files: ['src/sass/style/*.scss', 'src/sass/transition/*.scss'],
+                tasks: ['compass']
+            }
+        },
+        compass: {
+            style: {
+                options: {
+                    sassDir: 'src/sass/style',
+                    cssDir: 'themes/style',
+                    environment: 'development'
+                }
+            },
+            transition: {
+                options: {
+                    sassDir: 'src/sass/transition',
+                    cssDir: 'themes/transition',
+                    environment: 'development'
+                }
             }
         },
         ejs: {
@@ -17,8 +37,9 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-simple-ejs');
 
-    grunt.registerTask('build', ['ejs']);
+    grunt.registerTask('build', ['ejs', 'compass']);
     grunt.registerTask('default', ['build']);
 };
