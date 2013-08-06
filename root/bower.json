@@ -1,0 +1,12 @@
+{
+  "name": "{%= name %}",
+  "version": "0.0.0",
+  "main": "index.html",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "ejs-head-modules": "~0.0.1"
+  }
+}

@@ -1,6 +1,28 @@
 # slide title & description
-title: {%= name %}
-description: {%= description %}
+meta:
+  title: {%= name %}
+  description: {%= description %}
+
+# slide URL
+url: http://example.com
+
+# SNS settings
+sns:
+  twitter:
+    sharetext:
+      {%= description %}      
+    sharehashtag: []
+
+  facebook:
+    app_id: ''
+    sharetext:
+      {%= description %}
+
+ogp:
+  image: 
+    url: http://example.com/img/ogp-icon.png
+    width: 300
+    height: 300
 
 # neon, swiss or web-2.0 (default)
 style_theme: swiss
