@@ -33,13 +33,20 @@ module.exports = function(grunt) {
                 dest: './',
                 options: 'src/options.dev.yaml'
             }
+        },
+        koko: {
+            dev: {
+                openPath: '/'
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-simple-ejs');
+    grunt.loadNpmTasks('grunt-koko');
 
-    grunt.registerTask('build', ['ejs', 'compass']);
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('server', ['koko']);
+    grunt.registerTask('dev', ['ejs:dev', 'compass:dev']);
+    grunt.registerTask('default', ['dev']);
 };

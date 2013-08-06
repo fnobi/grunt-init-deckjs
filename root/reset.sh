@@ -1,5 +1,5 @@
 rm -rf *
 grunt-init deckjs
-npm install
+npm link
 grunt build
 koko -o index.html
