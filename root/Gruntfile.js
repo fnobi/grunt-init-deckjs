@@ -47,6 +47,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-koko');
 
     grunt.registerTask('server', ['koko']);
-    grunt.registerTask('dev', ['ejs:dev', 'compass:dev']);
+    grunt.registerTask('dev', ['ejs:dev', 'compass']);
     grunt.registerTask('default', ['dev']);
 };
